@@ -10,12 +10,13 @@ import BookmarkBorderIcon from '@mui/icons-material/BookmarkBorder';
 import VerifiedIcon from '@mui/icons-material/Verified';
 import PermIdentityIcon from '@mui/icons-material/PermIdentity';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+import CreateIcon from '@mui/icons-material/Create';
 
 function Sidebar() {
 	return (
-		<div className='flex flex-col'>
-			<TwitterIcon className='my-3 ml-1 text-twitter' fontSize='large'/>
-            <SidebarRow Icon={HomeIcon} title='Home'/>
+		<div className='col-span-2 flex flex-col items-center md:items-start'>
+			<TwitterIcon className='my-3 ml-1 text-twitter' fontSize='large' />
+			<SidebarRow Icon={HomeIcon} title='Home' />
 			<SidebarRow Icon={SearchIcon} title='Explore' />
 			<SidebarRow Icon={NotificationsNoneIcon} title='Notifications' />
 			<SidebarRow Icon={MailOutlineIcon} title='Messages' />
@@ -24,7 +25,10 @@ function Sidebar() {
 			<SidebarRow Icon={VerifiedIcon} title='Verified' />
 			<SidebarRow Icon={PermIdentityIcon} title='Profile' />
 			<SidebarRow Icon={MoreHorizIcon} title='More' />
-			<button className='w-56 h-12 mt-4 px-8 bg-twitter hover:bg-[#1a8cd8] text-white text-[17px] font-semibold rounded-full cursor-pointer transition-all duration-200'>
+			<button className='md:hidden h-12 mt-4 px-3 bg-twitter hover:bg-[#1a8cd8] text-white text-[17px] font-semibold rounded-full cursor-pointer transition-all duration-200'>
+				<CreateIcon />
+			</button>
+			<button className='hidden md:inline-flex items-center justify-center w-56 h-12 mt-4 px-8 bg-twitter hover:bg-[#1a8cd8] text-white text-[17px] font-semibold rounded-full cursor-pointer transition-all duration-200'>
 				Tweet
 			</button>
 		</div>
