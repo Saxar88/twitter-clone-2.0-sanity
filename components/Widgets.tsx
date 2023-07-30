@@ -4,7 +4,7 @@ import Trend from './Trend';
 
 function Widgets() {
 	return (
-		<div className='hidden lg:inline col-span-3 mt-2 px-2'>
+		<div className='hidden lg:inline col-span-2 mt-2 px-2'>
 			<div className='flex items-center mt-2 p-3 space-x-2 bg-twitterBg rounded-full'>
 				<SearchIcon className='h-5 w-5 text-twitterAlt' />
 				<input
