@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import { OverridableComponent } from '@mui/material/OverridableComponent';
 import { SvgIconTypeMap } from '@mui/material';

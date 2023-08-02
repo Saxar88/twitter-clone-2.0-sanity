@@ -1,3 +1,5 @@
+'use client';
+
 import React, { useState } from 'react';
 import TweetBoxOption from './TweetBoxOption';
 import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';

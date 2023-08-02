@@ -1,3 +1,5 @@
+'use client';
+
 import React from 'react';
 import SidebarRow from './SidebarRow';
 import TwitterIcon from '@mui/icons-material/Twitter';
