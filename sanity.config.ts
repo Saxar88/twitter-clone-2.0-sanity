@@ -3,7 +3,7 @@ import { deskTool } from 'sanity/desk';
 import tweet from './sanity/schemas/tweet';
 import comment from './sanity/schemas/comment';
 
-export default defineConfig({
+const config = defineConfig({
 	basePath: '/admin',
 	name: 'twitter-clone-2',
 	title: 'Twitter clone 2.0',
@@ -16,3 +16,5 @@ export default defineConfig({
 		types: [tweet, comment],
 	},
 });
+
+export default config;

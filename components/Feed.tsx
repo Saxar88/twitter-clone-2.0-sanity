@@ -1,7 +1,13 @@
 import React from 'react';
 import TweetBox from './TweetBox';
+import { TweetProps } from '@/typings';
+import Tweet from './Tweet';
 
-function Feed() {
+interface Props {
+	tweets: TweetProps[];
+}
+
+function Feed({ tweets }: Props) {
 	return (
 		<div className='col-span-7 border-x lg:col-span-5'>
 			<div>
@@ -9,6 +15,11 @@ function Feed() {
 			</div>
 			<div className='px-4'>
 				<TweetBox />
+			</div>
+			<div className=''>
+				{tweets.map((tweet) => (
+					<Tweet key={tweet._id} tweet={tweet} />
+				))}
 			</div>
 		</div>
 	);

@@ -22,6 +22,16 @@ export default defineType({
 			type: 'string',
 		}),
 		defineField({
+			name: 'handle',
+			title: 'Handle',
+			type: 'string',
+		}),
+		defineField({
+			name: 'verified',
+			title: 'Verified',
+			type: 'boolean',
+		}),
+		defineField({
 			name: 'profileImg',
 			title: 'Profile Picture',
 			type: 'string',
