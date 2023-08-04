@@ -5,12 +5,11 @@ import { groq } from 'next-sanity';
 
 const feedQuery = groq`*[_type == "tweet" && !blockTweet]{_id, ...} | order(createdAt desc)`;
 
-type Data = { tweets: TweetProps[] };
+type Data = {
+	tweets: TweetProps[];
+};
 
-export default async function handler(
-	req: NextApiRequest,
-	res: NextApiResponse<Data>
-) {
+export async function GET(req: NextApiRequest, res: NextApiResponse<Data>) {
 	const tweets: TweetProps[] = await sanityClient.fetch(feedQuery);
 
 	console.log({ tweets });
