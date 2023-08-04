@@ -1,49 +1,23 @@
-// import Feed from '@/components/Feed';
-// import Sidebar from '@/components/Sidebar';
-// import Widgets from '@/components/Widgets';
-// import Head from 'next/head';
-
-// async function Home() {
-// 	return (
-// 		<div className='mx-auto max-h-screen overflow-hidden lg:max-w-7xl '>
-// 			<Head>
-// 				<title>Twitter clone 2.0</title>
-// 			</Head>
-// 			<main className='grid grid-cols-9'>
-// 				<Sidebar />
-// 				<Feed />
-// 				<Widgets />
-// 			</main>
-// 		</div>
-// 	);
-// }
-
-// export default Home;
-
-'use client';
-
-import React, { useEffect, useState } from 'react';
 import Feed from '@/components/Feed';
 import Sidebar from '@/components/Sidebar';
 import Widgets from '@/components/Widgets';
-import { TweetProps } from '@/typings';
-import { fetchTweets } from '@/utils/fetchTweets';
 import Head from 'next/head';
 
-function Home() {
-	const [tweets, setTweets] = useState<TweetProps[]>([]);
+async function getData() {
+	const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/api/getTweets`);
 
-	useEffect(() => {
-		async function fetchTweetsData() {
-			const tweetsData = await fetchTweets();
-			setTweets(tweetsData);
-		}
+	if (!res.ok) {
+		throw new Error('Failed to fetch data.');
+	}
 
-		fetchTweetsData();
-	}, []);
+	return res.json();
+}
+
+async function Home() {
+	let tweets = await getData();
 
 	return (
-		<div className='mx-auto max-h-screen overflow-hidden lg:max-w-7xl '>
+		<div className='mx-auto max-h-screen overflow-hidden lg:max-w-7xl'>
 			<Head>
 				<title>Twitter clone 2.0</title>
 			</Head>
