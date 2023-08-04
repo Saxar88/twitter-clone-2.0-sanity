@@ -1,16 +1,12 @@
 import Feed from '@/components/Feed';
 import Sidebar from '@/components/Sidebar';
 import Widgets from '@/components/Widgets';
-import { TweetProps } from '@/typings';
-import { fetchTweets } from '@/utils/fetchTweets';
-import { GetServerSideProps } from 'next';
+import { getTweets } from '@/sanity/sanity-utils';
 import Head from 'next/head';
 
-interface Props {
-	tweets: TweetProps[];
-}
+async function Home() {
+	const tweets = await getTweets();
 
-const Home = ({ tweets }: Props) => {
 	return (
 		<div className='mx-auto max-h-screen overflow-hidden lg:max-w-7xl '>
 			<Head>
@@ -23,12 +19,6 @@ const Home = ({ tweets }: Props) => {
 			</main>
 		</div>
 	);
-};
+}
 
 export default Home;
-
-export const getServerSideProps: GetServerSideProps = async (context) => {
-	const tweets = await fetchTweets();
-
-	return { props: { tweets } };
-};
