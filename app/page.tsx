@@ -11,11 +11,14 @@ async function getData() {
 		throw new Error('Failed to fetch data');
 	}
 
+	console.log('THIS IS IN getData: ', res);
 	return res.json();
 }
 
 async function Home() {
-	let tweets = await getData();
+	let tweets: TweetProps[] = await getData();
+
+	console.log('THIS IS IN Home: ', tweets);
 
 	return (
 		<div className='mx-auto text-twitterText overflow-y-scroll no-scrollbar lg:max-w-7xl'>

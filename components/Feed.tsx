@@ -7,7 +7,9 @@ interface Props {
 	tweets: TweetProps[];
 }
 
-async function Feed({ tweets }: Props) {
+function Feed({ tweets }: Props) {
+	console.log('THIS IS IN Feed: ', tweets);
+
 	return (
 		<div className='col-span-7 border-x lg:col-span-5 text-[15px]'>
 			<div>
