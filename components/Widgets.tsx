@@ -4,7 +4,7 @@ import Trend from './Trend';
 
 function Widgets() {
 	return (
-		<div className='hidden lg:inline col-span-2 mt-2 px-2'>
+		<div className='hidden lg:inline col-span-2 mt-2 ml-4 px-2'>
 			<div className='flex items-center mt-2 p-3 space-x-2 bg-twitterBg rounded-full'>
 				<SearchIcon className='h-5 w-5 text-twitterAlt' />
 				<input
@@ -14,7 +14,7 @@ function Widgets() {
 				/>
 			</div>
 			<div className='mt-4 bg-[#f7f9f9] rounded-[20px]'>
-				<h2 className='px-4 py-3 text-lg font-extrabold'>Trends for you</h2>
+				<h2 className='px-4 py-3 text-xl font-extrabold'>Trends for you</h2>
 				<Trend
 					category='Business & finance · Trending'
 					title='Telegram'

@@ -16,7 +16,7 @@ import CreateIcon from '@mui/icons-material/Create';
 
 function Sidebar() {
 	return (
-		<div className='col-span-2 flex flex-col items-center md:items-start'>
+		<div className='sticky top-0 col-span-2 flex flex-col items-center md:items-start'>
 			<TwitterIcon className='my-3 ml-1 text-twitter' fontSize='large' />
 			<SidebarRow Icon={HomeIcon} title='Home' />
 			<SidebarRow Icon={SearchIcon} title='Explore' />

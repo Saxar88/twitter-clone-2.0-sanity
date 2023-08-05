@@ -6,7 +6,7 @@ import comment from './sanity/schemas/comment';
 const config = defineConfig({
 	name: 'twitter-clone-2',
 	title: 'Twitter clone 2.0',
-	apiVersion: '2023-05-03',
+	apiVersion: '2023-08-03',
 	projectId: 'v7oba5h5',
 	dataset: 'production',
 	token: process.env.SANITY_SECRET_TOKEN,

@@ -13,7 +13,7 @@ function TweetBox() {
 	const [input, setInput] = useState<string>('');
 
 	return (
-		<div className='flex px-4'>
+		<div className='flex'>
 			<div className='flex align-start mr-3 pt-3'>
 				<img
 					src='images/elonmusk-pfp.jpg'
@@ -33,7 +33,7 @@ function TweetBox() {
 							className='flex flex-1 h-7 text-lg text-twitterText focus:outline-none'
 						/>
 					</div>
-					<div className='flex items-center justify-between -ml-1.5'>
+					<div className='flex items-center justify-between -ml-1.5 pb-2'>
 						<div className='flex space-x-2'>
 							<TweetBoxOption Icon={InsertPhotoIcon} label='Media' />
 							<TweetBoxOption Icon={GifBoxIcon} label='GIF' />

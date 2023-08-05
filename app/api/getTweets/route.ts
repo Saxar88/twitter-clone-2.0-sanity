@@ -1,15 +1,17 @@
 import { TweetProps } from '@/typings';
 import { NextApiRequest, NextApiResponse } from 'next';
-import { createClient, groq } from 'next-sanity';
-import clientConfig from '@/sanity/config/client-config';
-import { NextResponse } from 'next/server';
+import { groq } from 'next-sanity';
+import { sanityClient } from '@/sanity/sanity';
+
+const feedQuery = groq`
+	*[_type=="tweet" && blockTweet!=true] | order(_createdAt asc)`;
 
 type Data = {
 	tweets: TweetProps[];
 };
 
 export async function GET(req: NextApiRequest, res: NextApiResponse<Data>) {
-	const tweets: TweetProps[] = await createClient(clientConfig).fetch(groq`*`);
+	const tweets: TweetProps[] = await sanityClient.fetch(feedQuery);
 
-	return NextResponse.json(tweets);
+	return res.json({ tweets });
 }

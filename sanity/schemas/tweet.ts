@@ -1,45 +1,65 @@
-import { defineField, defineType } from 'sanity';
-
-export default defineType({
+const tweet = {
 	name: 'tweet',
 	title: 'Tweet',
 	type: 'document',
 	fields: [
-		defineField({
+		{
+			name: 'username',
+			title: 'Username',
+			type: 'string',
+		},
+		{
+			name: 'handle',
+			title: 'Handle',
+			type: 'string',
+		},
+		{
+			name: 'verified',
+			title: 'Verified',
+			type: 'boolean',
+		},
+		{
+			name: 'profileImg',
+			title: 'Profile Picture',
+			type: 'string',
+		},
+		{
 			name: 'text',
 			title: 'Tweet text',
 			type: 'string',
-		}),
-		defineField({
+		},
+		{
+			name: 'image',
+			title: 'Tweet Image',
+			type: 'url',
+		},
+		{
 			name: 'blockTweet',
 			title: 'Block Tweet',
 			description: 'ADMIN Controls: Toggle if Tweet is deemed inappropriate',
 			type: 'boolean',
-		}),
-		defineField({
-			name: 'username',
-			title: 'Username',
+		},
+		{
+			name: 'replies',
+			title: 'Replies',
 			type: 'string',
-		}),
-		defineField({
-			name: 'handle',
-			title: 'Handle',
+		},
+		{
+			name: 'retweets',
+			title: 'Retweets',
 			type: 'string',
-		}),
-		defineField({
-			name: 'verified',
-			title: 'Verified',
-			type: 'boolean',
-		}),
-		defineField({
-			name: 'profileImg',
-			title: 'Profile Picture',
+		},
+		{
+			name: 'likes',
+			title: 'Likes',
 			type: 'string',
-		}),
-		defineField({
-			name: 'tweetImg',
-			title: 'Tweet Image',
+		},
+		{
+			name: 'views',
+			title: 'Views',
 			type: 'string',
-		}),
+		},
 	],
-});
+};
+
+export default tweet;
